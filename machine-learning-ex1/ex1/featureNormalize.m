@@ -20,15 +20,13 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
-
-
-
-
-
-
-
-
-
+mu = mean(X);
+%disp("mu size,"),disp(size(mu))
+sigma = std(X);
+%disp("sigma size,"),disp(size(sigma))
+%disp("x-mu size,"),disp(size(X-mu))
+X_norm = (X - mu)./sigma;
+%disp("X_norm size,"), disp(size(X_norm))
 % ============================================================
 
 end

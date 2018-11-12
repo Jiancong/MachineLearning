@@ -52,8 +52,7 @@ fprintf('Normalizing Features ...\n');
 [X mu sigma] = featureNormalize(X);
 
 % Add intercept term to X
-X = [ones(m, 1) X];
-
+X = [ones(m, 1), X];
 
 %% ================ Part 2: Gradient Descent ================
 
@@ -87,6 +86,7 @@ num_iters = 400;
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(3, 1);
+
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
 
 % Plot the convergence graph
@@ -108,6 +108,8 @@ price = 0; % You should change this
 temp = [1 1650 3];
 temp(1,2) = (temp(1,2) - mu(1,1))/(sigma(1,1));
 temp(1,3) = (temp(1,3) - mu(1,2))/(sigma(1,2));
+
+% NOTE: This is the step for inference.
 price = temp * theta;
 
 % ============================================================
