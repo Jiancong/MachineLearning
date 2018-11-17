@@ -20,12 +20,12 @@ grad = zeros(size(theta));
 h_theta = sigmoid(X*theta); % 100x1
 %disp("h_theta"); disp(size(h_theta));
 
-regular_part = lambda/(2*m) * (sum(theta.^2) - theta(1)^2) ;
+regular_part = lambda/(2*m) * (sum(theta.^2) - theta(1)^2);
 
 J = 1/m*sum(-y.*log(h_theta)-(1-y).*log(1-h_theta)) + regular_part;
 
-regular_grad = lambda/m * theta
-regular_grad(1) = 0
+regular_grad = lambda/m * theta;
+regular_grad(1) = 0;
 grad = 1/m*(X'*(h_theta-y)) + regular_grad;
 %disp("grad size:"); disp(size(grad));
 
