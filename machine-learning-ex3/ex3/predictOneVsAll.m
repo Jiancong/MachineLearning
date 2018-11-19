@@ -7,9 +7,10 @@ function p = predictOneVsAll(all_theta, X)
 %  regression theta vector for the i-th class. You should set p to a vector
 %  of values from 1..K (e.g., p = [1; 3; 1; 2] predicts classes 1, 3, 1, 2
 %  for 4 examples) 
-
+disp("X size:"); disp(size(X));  % 5000x400
 m = size(X, 1);
-num_labels = size(all_theta, 1);
+num_labels = size(all_theta, 1);  % 10x401
+fprintf("all_theta size: %d %d\n", size(all_theta))
 
 % You need to return the following variables correctly 
 p = zeros(size(X, 1), 1);
@@ -30,6 +31,8 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 % =========================================================================
-
+[max_values p] = max(X*all_theta', [], 2);
+%fprintf('p size: %d %d\n', size(p))
+%disp('predict value:'); disp(p)
 
 end
