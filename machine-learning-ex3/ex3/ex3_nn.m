@@ -45,7 +45,7 @@ displayData(X(sel, :));
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% ================ Part 2: Loading Pameters ================
+%% ================ Part 2: Loading Parameters ================
 % In this part of the exercise, we load some pre-initialized 
 % neural network parameters.
 
@@ -60,6 +60,7 @@ load('ex3weights.mat');
 %  neural network to predict the labels of the training set. This lets
 %  you compute the training set accuracy.
 
+% Theta1: 25x401, Theta2: 10x26, X: 5000x400
 pred = predict(Theta1, Theta2, X);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
